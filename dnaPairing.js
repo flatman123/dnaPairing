@@ -7,7 +7,7 @@ function findPair(nucleobase){
 	};
 	//Find matching nucleobases 
 	let pairingBase = Object.keys(dnaCombinations)
-								.filter(prop => nucleobase === prop);
+					.filter(prop => nucleobase === prop);
 	return dnaCombinations[pairingBase];
 }
 
@@ -20,7 +20,7 @@ function pairElement(nucleobase,...pairs){
 	//Core Logic
 	let pairing = findPair(nucleobase[0]);
 	return pairs
-				.concat([pairing.split('')])
-				.concat(pairElement(nucleobase.replace(nucleobase[0],'')));
+		.concat([pairing.split('')])
+		.concat(pairElement(nucleobase.replace(nucleobase[0],'')));
 };
 console.log(pairElement('ATCGA'));
