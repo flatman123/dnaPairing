@@ -9,14 +9,14 @@ function findPair(nucleobase){
 	let pairingBase = Object.keys(dnaCombinations)
 					.filter(prop => nucleobase === prop);
 	return dnaCombinations[pairingBase];
-}
+};
 
 
 function pairElement(nucleobase,...pairs){
 	//Base Condition
 	if (nucleobase === ''){
 		return [];
-	}
+	};
 	//Core Logic
 	let pairing = findPair(nucleobase[0]);
 	return pairs
